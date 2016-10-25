@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void goDisplay(View v) {
         Intent intentDisplay = new Intent();
-        intentDisplay.setAction("com.example.jianhuayang.myactivities.ThirdActivity");
+//        intentDisplay.setAction("com.example.jianhuayang.myactivities.ThirdActivity");
         intentDisplay.putExtra(KEY_MAKE, editTextMake.getText().toString());
         intentDisplay.putExtra(KEY_YEAR, Integer.parseInt(editTextYear.getText().toString()));
         Bundle bundle = new Bundle();
@@ -86,5 +86,13 @@ public class MainActivity extends AppCompatActivity {
         bundle.putString(KEY_NOTE, editTextNote.getText().toString());
         intentDisplay.putExtras(bundle);
         startActivity(intentDisplay);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_EDIT && resultCode == RESULT_OK) {
+            editTextNote.setText(data.getData().toString());
+        }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }
