@@ -14,23 +14,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".NoteEditingActivity"
             android:theme="@style/MyDialog">
-        </activity>
 
+        </activity>
         <activity
             android:name=".DisplayActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_display"
             android:theme="@style/FullscreenTheme">
-            <intent-filter.>
+            <intent-filter>
                 <action android:name="com.example.jianhuayang.myactivities.ThirdActivity" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter.>
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DownloadActivity"
+            >
         </activity>
     </application>
-
 </manifest>

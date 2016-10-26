@@ -112,7 +112,6 @@ public class DisplayActivity extends AppCompatActivity {
         // while interacting with the UI.
         findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
 
-
         textView = (TextView) findViewById(R.id.fullscreen_content);
         StringBuilder messageFromActivity1 = new StringBuilder();
         Intent intent = getIntent();

@@ -16,6 +16,7 @@ public class NoteEditingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note_editing);
         editText = (EditText) findViewById(R.id.inputNote);
+
     }
 
     public void onDoneClick(View v)
