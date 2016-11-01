@@ -41,22 +41,39 @@ public class DownloadActivity extends AppCompatActivity {
                         }
                     });
                 }
-                if (progressStatus == 100) {
-                    handler.post(new Runnable() {
+                if (progressStatus == 100)
+                {
+                    handler.post(new Runnable()
+                    {
                         public void run() {
+
                             progressBar.setVisibility(View.GONE);
                             textView.setVisibility(View.GONE);
                             imageView.setVisibility(View.VISIBLE);
-                            imageView.setImageResource(R.drawable.voiture);
-                        }
-                    });
-                }
-            }
+                            if (MainActivity.make == "Volvo")
+                            {
+                                imageView.setImageResource(R.drawable.voiture);
+                            }
 
-            private int doSomeWork() {
+                            if (MainActivity.make == "Mini")
+                            {
+                                imageView.setImageResource(R.drawable.mini);
+                            }
+                            if (MainActivity.make == "Volskswagen")
+                            {
+                                imageView.setImageResource(R.drawable.volskswagen);
+                            }
+                        }
+                    }
+                    );
+            }}
+
+            private int doSomeWork()
+            {
                 try {
                     Thread.sleep(100);
-                } catch (InterruptedException e) {
+                } catch (InterruptedException e)
+                {
                     e.printStackTrace();
                 }
                 return ++staticStatus;
@@ -66,7 +83,16 @@ public class DownloadActivity extends AppCompatActivity {
 
     public void onReturnClick(View v) {
         Intent intent = new Intent();
-        intent.putExtra(KEY_DRAWABLE, R.drawable.voiture);
+        if(MainActivity.make =="Volvo") {
+            intent.putExtra(KEY_DRAWABLE, R.drawable.voiture);
+        }
+        if(MainActivity.make =="Volskswagen") {
+            intent.putExtra(KEY_DRAWABLE, R.drawable.volskswagen);
+        }
+        else if (MainActivity.make =="Mini")
+        {
+            intent.putExtra(KEY_DRAWABLE, R.drawable.mini);
+        }
         setResult(RESULT_OK, intent);
         finish();
     }

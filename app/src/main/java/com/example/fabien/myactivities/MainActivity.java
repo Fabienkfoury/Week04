@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private EditText editTextNote;
 
     private String[] carMaker;
-    private String make;
+    public static String make;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -145,6 +145,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         make = carMaker[position];
+        Log.d("xxxx", make);
     }
 
     @Override

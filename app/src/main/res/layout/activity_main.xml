@@ -35,7 +35,9 @@
         <TableRow
             android:gravity="top"
             android:paddingBottom="10dp"
-            android:paddingTop="10dp">
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/labelMake"
@@ -55,8 +57,9 @@
         </TableRow>
 
         <TableRow
-            android:layout_height="30dp"
-            android:paddingBottom="10dp">
+            android:layout_height="match_parent"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent">
 
             <TextView
                 android:id="@+id/labelType"
